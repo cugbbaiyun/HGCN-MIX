@@ -1,4 +1,4 @@
-# Value function factorisation with hypergraph convolution for cooperative multi-agent reinforcement learning
+# Cooperative Multi-Agent Reinforcement Learning with Hypergraph Convolution
 
 ## Note
 HGCN-MIX is a new algorithm that combines hypergraph convolutional and value-decomposition methods, and it is based on  [PyMARL](https://github.com/oxwhirl/pymarl) and [SMAC](https://github.com/oxwhirl/smac) codebases which are open-sourced.
