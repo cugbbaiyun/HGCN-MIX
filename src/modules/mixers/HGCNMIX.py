@@ -9,9 +9,11 @@ class HGCN(nn.Module):
     def __init__(self, n_edges, in_feature, out_feature, n_agents):
         super(HGCN, self).__init__()
         print(n_edges)
-        self.W = nn.Parameter(torch.eye(n_edges).cuda())
+        self.W_line = nn.Parameter(torch.ones(n_edges).cuda())
+        self.W = None
 
     def forward(self, node_features, hyper_graph):
+        self.W = torch.diag_embed(self.W_line)
         B_inv = torch.sum(hyper_graph.detach(), dim=-2)
         B_inv = torch.diag_embed(B_inv)
         softmax_w = torch.abs(self.W).detach()
